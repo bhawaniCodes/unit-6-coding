@@ -8,8 +8,8 @@
     line-height: 1.15;
 }
 
-body{
-    background-color: rgb(46,48,53);
+body {
+    background-color: rgb(46, 48, 53);
 }
 a {
     text-decoration: none;
@@ -24,7 +24,7 @@ a {
     position: fixed;
     top: 0;
     z-index: 10;
-    background-color: rgb(23,21,68);
+    background-color: rgb(23, 21, 68);
 }
 .backgroundCover {
     background-image: url("imgurImageHeader.png");
@@ -64,28 +64,30 @@ a {
     position: relative;
 }
 .searchResult {
-position: absolute;
-width: 600px;
- color: white;
- background-color: rgb(69, 68, 105);
- z-index: 8;
- top: 50px;
- /* padding: 10px; */
- max-height: 400px;
- overflow-y: scroll;
+    position: absolute;
+    width: 600px;
+    color: white;
+    background-color: rgb(69, 68, 105);
+    z-index: 8;
+    top: 50px;
+    /* padding: 10px; */
+    max-height: 400px;
+    overflow-y: scroll;
 }
-
-.search-result-data{
+.randomQuote {
+    margin-top: 65px;
+}
+.search-result-data {
     display: flex;
     justify-content: start;
     align-items: center;
     margin: 10px;
 }
-.search-result-data:hover{
+.search-result-data:hover {
     background-color: #656b70;
     color: white;
 }
-.search-result-data>img{
+.search-result-data > img {
     width: 40px;
     height: 40px;
     object-fit: cover;
@@ -214,7 +216,7 @@ width: 600px;
     display: flex;
     flex-direction: column;
     margin: auto;
-    margin-top: -40px;
+    margin-top: -80px;
 }
 .head-drop-down {
     display: flex;
@@ -257,11 +259,11 @@ width: 600px;
     width: 23.4%;
 }
 
-.main_container_images_insideDiv:hover{
-    filter: brightness(1.1)
+.main_container_images_insideDiv:hover {
+    filter: brightness(1.1);
 }
 .main_container_images_insideDiv {
-    box-shadow: 0px 0px 15px rgba(0,0,0,0.6);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
     width: 100%;
     border-radius: 5px;
     border-bottom-left-radius: none;
@@ -282,7 +284,6 @@ width: 600px;
     align-items: center;
     border-radius: 2px;
     color: gray;
-    
 
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -292,10 +293,10 @@ width: 600px;
     padding-top: 10px;
     height: 25px;
 }
-.main_container_images_name:hover{
+.main_container_images_name:hover {
     cursor: pointer;
 }
-.content_image{
+.content_image {
     height: 1200px;
     display: flex;
     flex-wrap: wrap;
