@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.detailName{
+    text-align: center;
+    color: gold;
+}
+
+.details{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.details div{
+    border-radius: 10px;
+    border: 1px solid gold;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    color: gold;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+.details div{
+    font-size: 16px;
+}
+.details div>:nth-child(1){
+    font-size: 25px;
+}
+.goBack{
+    border: 1px solid gold;
+    background-color: black;
+    color: gold;
+    padding: 15px 30px;
+    border-radius: 10px;
+}

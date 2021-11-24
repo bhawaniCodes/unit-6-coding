@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="detail.css" />
+        <title>Detail</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="detailName">
+                <h1 id='title'></h1>
+            </div>
+            <div class="details">
+                <div class="personalInfo" id="detailRole">
+                </div>
+                <div class="anatomy" id="detailData">
+                </div>
+            </div>
+            <button class="goBack" onclick="goBack()">Go Back</button>
+        </div>
+    </body>
+</html>
+<script >
+let detailData = document.getElementById("detailData");
+let detailRole = document.getElementById("detailRole");
+let mainTitle = document.getElementById("title");
+const ts = 1;
+const PUBLIC_KEY = "a13557bf8c8b88acf8dd779725b7fb5c";
+const hash = 'a841a14f4669dfc41905398edbde2e40';
+
+    const id = JSON.parse(localStorage.getItem('id'))
+    console.log('id:', id)
+
+    
+const displayDetailData = async (id) => {
+    console.log('id', id)
+    let res = await fetch(
+        `https://gateway.marvel.com:443/v1/public/comics/${id}?ts=${ts}&apikey=${PUBLIC_KEY}&hash=${hash}`
+    );
+    let data = await res.json();
+    console.log('data:', data)
+    const { items} = data.data.results[0].creators;
+    console.log('items:', items)
+    specificDataPut(items, data.data.results[0].title)
+}
+displayDetailData(id);
+
+
+const specificDataPut = async(items, title) => {
+    mainTitle.innerHTML = title;
+    for (let i = 0; i < 5; i++) {
+        let pRole = document.createElement('p');
+        let pData = document.createElement('p');
+        pRole.innerHTML = items[i]?.role;
+        pData.innerHTML = items[i]?.name;
+        console.log(pRole, pData)
+        detailRole.appendChild(pRole);
+        detailData.appendChild(pData);
+    }
+}
+
+const goBack = ()=>{
+    console.log('sdfsdf')
+    window.location.href = 'index.html';
+}
+
+</script>
